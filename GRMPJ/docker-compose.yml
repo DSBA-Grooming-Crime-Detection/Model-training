@@ -1,0 +1,38 @@
+services:
+  web:
+    build:
+      context: ./chat_site
+    ports:
+      - "5000:5000"
+    env_file:
+      - ./chat_site/.env
+    networks:
+      - backend
+    depends_on:
+      - detection
+
+  detection:
+    build:
+      context: ./detection_api
+    ports:
+      - "6000:6000"
+    env_file:
+      - ./detection_api/.env
+    networks:
+      - backend
+
+  ngrok:
+    image: ngrok/ngrok:alpine
+    restart: unless-stopped
+    command: http --domain=loyal-serval-distinctly.ngrok-free.app web:5000
+    environment:
+      - NGROK_AUTHTOKEN=${NGROK_AUTHTOKEN}
+    env_file:
+      - .env
+    networks:
+      - backend
+    ports:
+      - "4040:4040"
+
+networks:
+  backend:

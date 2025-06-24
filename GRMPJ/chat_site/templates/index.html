@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>그루밍 탐지 시뮬레이터</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+
+<body>
+  <div class="main-container">
+    <div class="content-box">
+      <div class="image-slot">
+        <!-- 이미지 삽입 예정 공간 -->
+      </div>
+
+      <h1 class="site-title">그루밍 탐지 시뮬레이터</h1>
+      {% if session['kakao_access_token'] %}
+        <!-- 로그인 성공 시: 채팅방 폼 표시 -->
+        <form class="entry-form" action="/" method="POST"> <!-- 🔁 GET → POST -->
+          <label for="user_name">이름</label>
+          <input name="user_name" required>
+          <label for="room_id">방 제목</label>
+          <input name="room_id" required>
+          <button type="submit">채팅 시작</button>
+        </form>
+      {% else %}
+        <div class="kakao-login-wrapper">
+          <form action="{{ url_for('kakao_login') }}" method="GET">
+            <button class="btn-kakao" type="submit">카카오 로그인</button>
+          </form>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</body>
+
+</html>

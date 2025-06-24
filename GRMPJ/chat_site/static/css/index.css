@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #1e3c72, #2a5298); /* 남색 그라데이션 */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.main-container {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  padding: 40px 30px;
+  max-width: 450px;
+  width: 100%;
+}
+
+.image-slot {
+  width: 100%;
+  height: 160px;
+  background-color: #f0f0f0;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-size: 14px;
+  text-align: center;
+}
+
+.site-title {
+  text-align: center;
+  color: #1e3c72;
+  margin-bottom: 24px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.entry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.entry-form label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+  font-size: 20px;
+}
+
+.entry-form input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 20px;
+}
+
+.entry-form button {
+  margin-top: 12px;
+  padding: 12px;
+  background-color: #1e3c72;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.entry-form button:hover {
+  background-color: #16335c;
+}
+
+.kakao-login-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.btn-kakao {
+  background-color: #FEE500;
+  color: #191600;
+  border: none;
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-kakao:hover {
+  background-color: #f7d900;
+}
+
