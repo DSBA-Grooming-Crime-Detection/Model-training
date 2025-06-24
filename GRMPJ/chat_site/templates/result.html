@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>위험 분석 결과</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/result.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="result-container">
+    <div class="report-box">
+      <h2>보고서</h2>
+      <pre>{{ report }}</pre>
+    </div>
+
+    <div class="chart-box">
+      <canvas id="donutChart" width="200" height="200"></canvas>
+      <canvas id="lineChart" width="200" height="200"></canvas>
+    </div>
+  </div>
+  <script>
+    const roomId = "{{ room_id }}";
+    const userName = "{{ user_name }}";
+  </script>
+  <script src="{{ url_for('static', filename='js/result.js') }}"></script>
+</body>
+</html>

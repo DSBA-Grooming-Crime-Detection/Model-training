@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>채팅방</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="chat-container">
+      <div class="chat-box">
+        <div id="chat-hist">
+          <!-- 채팅 표시 영역-->
+        </div>
+        <form id="chat-form" class="chat-form">
+          <input type="text" id="user-input" placeholder="메시지를 입력하세요" autocomplete="off" required />
+          <button type="submit">전송</button>
+        </form>
+      </div>
+
+      <div class="chart-box">
+        <canvas id="donutChart" width="200" height="200"></canvas>
+        <canvas id="barChart" width="200" height="200"></canvas>
+      </div>
+    </div>
+    <script>
+      const roomId = '{{ room_id }}'
+      const userName = '{{ user_name }}'
+    </script>
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+  </body>
+</html>
